@@ -1,0 +1,6 @@
+fi = open("python/baitapfile/testing.inp",'r')
+n = int(fi.readline())
+a = list(map(int,fi.read().split()))
+fo = open('python/baitapflie/test.out','w')
+fo.write(f'{a}')
+print(a)

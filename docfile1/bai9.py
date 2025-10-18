@@ -1,0 +1,8 @@
+fi = open('docfile1/bai9.inp')
+fo = open('docfile1/bai9.out','w')
+name = fi.readline().strip()
+toi_ht = int(fi.readline())
+sau_cac_nam = int(fi.read())
+fo.write(f'Vao {sau_cac_nam} nam nua,tuoi ban {name} se la {toi_ht + sau_cac_nam} tuoi')
+fi.close()
+fo.close()
