@@ -1,14 +1,10 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <algorithm>
-#include <vector>
-#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
+
+#define TASK "BAI1_3"
 
 void LIS(vector<int> &ds, int n)
 {
-    vector<int> ket_qua;
     vector<int> L(n, 1);
     for(int i = 0 ; i < n; i++)
     {
@@ -26,7 +22,14 @@ void LIS(vector<int> &ds, int n)
 
 
 int main(){
-    vector<int> list = {1, 5,4,3,7,6,9};
-    LIS(list, list.size());
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    freopen(TASK".INP", "r",stdin);
+    freopen(TASK".OUT","w", stdout);
+    int n = 0;
+    cin>>n;
+    vector<int> arr(n);
+    for(int &j : arr) cin>>j;
+    LIS(arr, n);
     return 0;
 }
