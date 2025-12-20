@@ -32,7 +32,7 @@ private:
     unordered_map<long long, Student> mp;
 
 public:
-    void addScan(long long id, int time) {
+    void addScan(int id, int time) {
         if (mp.find(id) == mp.end()) {
             mp.emplace(id, Student(id, time));
         } else {
@@ -49,8 +49,7 @@ public:
             Student &st = p.second;
             int t = st.readingTime();
 
-            if (t > bestTime ||
-                (t == bestTime && st.getFirstPos() < bestFirstPos)) {
+            if (t > bestTime ||(t == bestTime && st.getFirstPos() < bestFirstPos)) {
                 bestTime = t;
                 bestId = st.getId();
                 bestFirstPos = st.getFirstPos();
@@ -67,7 +66,16 @@ int main(){
     // freopen(TASK".out", "w", stdout);
     int N; cin>> N;cout<<N;
     vector<int> ID(N);
-    for(int i = 0; i<N; i++) cin>>ID[i];
+    // for(int i = 0; i<N; i++) cin>>ID[i];
+    TimelineSystem ThoiGian;
+    for(int i  = 1; i < N; i++)
+    {
+        int ID;
+        cin>>ID;
+        ThoiGian.addScan(ID,i);
+    }
+    auto ketqua = ThoiGian.getBestStudent();
+    cout<<ketqua.first<<"\n"<<ketqua.second;
     // cout<<"\n";
     // for(int i : ID)
     // {

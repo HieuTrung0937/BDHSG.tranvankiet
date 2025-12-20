@@ -1,1 +1,98 @@
-10
+BAI2.cpp: In function 'int main()':
+BAI2.cpp:77:43: error: cannot bind non-const lvalue reference of type 'std::pair<long long int, int>&' to an rvalue of type 'std::pair<long long int, int>'       
+   77 |     auto &ketqua = ThoiGian.getBestStudent();
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~^~
+In file included from C:/msys64/ucrt64/include/c++/15.1.0/bits/memory_resource.h:49,
+                 from C:/msys64/ucrt64/include/c++/15.1.0/string:72,
+                 from C:/msys64/ucrt64/include/c++/15.1.0/bitset:54,
+                 from C:/msys64/ucrt64/include/c++/15.1.0/x86_64-w64-mingw32/bits/stdc++.h:54,
+                 from BAI2.cpp:1:
+C:/msys64/ucrt64/include/c++/15.1.0/tuple: In instantiation of 'std::pair<_T1, _T2>::pair(std::tuple<_Args1 ...>&, std::tuple<_Args2 ...>&, std::_Index_tuple<_Indexes1 ...>, std::_Index_tuple<_Indexes2 ...>) [with _Args1 = {long long int&&}; long long unsigned int ..._Indexes1 = {0}; _Args2 = {}; long long unsigned int ..._Indexes2 = {}; _T1 = const long long int; _T2 = Student]':
+C:/msys64/ucrt64/include/c++/15.1.0/tuple:2876:63:   required from 'std::pair<_T1, _T2>::pair(std::piecewise_construct_t, std::tuple<_Args1 ...>, std::tuple<_Args2 ...>) [with _Args1 = {long long int&&}; _Args2 = {}; _T1 = const long long int; _T2 = Student]'
+ 2876 |              typename _Build_index_tuple<sizeof...(_Args2)>::__type())
+      |                                                                      ^
+C:/msys64/ucrt64/include/c++/15.1.0/bits/new_allocator.h:191:4:   required from 'void std::__new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = std::pair<const long long int, Student>; _Args = {const std::piecewise_construct_t&, std::tuple<long long int&&>, std::tuple<>}; _Tp = std::__detail::_Hash_node<std::pair<const long long int, Student>, false>]'
+  191 |         { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/ucrt64/include/c++/15.1.0/bits/alloc_traits.h:674:17:   required from 'static void std::allocator_traits<std::allocator<_CharT> >::construct(allocator_type&, _Up*, _Args&& ...) [with _Up = std::pair<const long long int, Student>; _Args = {const std::piecewise_construct_t&, std::tuple<long long int&&>, std::tuple<>}; _Tp = std::__detail::_Hash_node<std::pair<const long long int, Student>, false>; allocator_type = std::allocator<std::__detail::_Hash_node<std::pair<const long long int, Student>, false> >]'
+  674 |           __a.construct(__p, std::forward<_Args>(__args)...);
+      |           ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/ucrt64/include/c++/15.1.0/bits/hashtable_policy.h:1556:36:   required from 'std::__detail::_Hashtable_alloc<_NodeAlloc>::__node_type* std::__detail::_Hashtable_alloc<_NodeAlloc>::_M_allocate_node(_Args&& ...) [with _Args = {const std::piecewise_construct_t&, std::tuple<long long int&&>, std::tuple<>}; _NodeAlloc = std::allocator<std::__detail::_Hash_node<std::pair<const long long int, Student>, false> >; __node_ptr = std::allocator<std::__detail::_Hash_node<std::pair<const long long int, Student>, false> >::value_type*]'
+ 1556 |             __node_alloc_traits::construct(__alloc, __n->_M_valptr(),
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1557 |                                            std::forward<_Args>(__args)...);
+      |                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/ucrt64/include/c++/15.1.0/bits/hashtable.h:305:35:   required from 'std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_Scoped_node::_Scoped_node(std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::__hashtable_alloc*, _Args&& ...) [with _Args = {const std::piecewise_construct_t&, std::tuple<long long int&&>, std::tuple<>}; _Key = long long int; _Value = std::pair<const long long int, Student>; _Alloc = std::allocator<std::pair<const long long int, Student> >; _ExtractKey = std::__detail::_Select1st; _Equal = std::equal_to<long long int>; _Hash = std::hash<long long int>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<false, false, true>; std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::__hashtable_alloc = std::_Hashtable<long long int, std::pair<const long long int, Student>, std::allocator<std::pair<const long long int, Student> >, std::__detail::_Select1st, std::equal_to<long long int>, std::hash<long long int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__hashtable_alloc]'        
+  305 |             _M_node(__h->_M_allocate_node(std::forward<_Args>(__args)...))
+      |                     ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/ucrt64/include/c++/15.1.0/bits/hashtable_policy.h:918:42:   required from 'std::__detail::_Map_base<_Key, std::pair<const _Key, _Val>, _Alloc, std::__detail::_Select1st, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::mapped_type& std::__detail::_Map_base<_Key, std::pair<const _Key, _Val>, _Alloc, std::__detail::_Select1st, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::operator[](key_type&&) [with _Key = long long int; _Val = Student; _Alloc = std::allocator<std::pair<const long long int, Student> >; _Equal = std::equal_to<long long int>; _Hash = std::hash<long long int>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<false, false, true>; mapped_type = Student; key_type = long long int]'
+  918 |       typename __hashtable::_Scoped_node __node {
+      |                                          ^~~~~~
+C:/msys64/ucrt64/include/c++/15.1.0/bits/unordered_map.h:1062:20:   required from 'std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::mapped_type& std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](key_type&&) [with _Key = long long int; _Tp = Student; _Hash = std::hash<long long int>; _Pred = std::equal_to<long long int>; _Alloc = std::allocator<std::pair<const long long int, Student> >; mapped_type = Student; key_type = long long int]'
+ 1062 |       { return _M_h[std::move(__k)]; }
+      |                ~~~~^
+BAI2.cpp:39:18:   required from here
+   39 |             mp[id].update(time);
+      |                  ^
+C:/msys64/ucrt64/include/c++/15.1.0/tuple:2887:9: error: no matching function for call to 'Student::Student()'
+ 2887 |         second(std::forward<_Args2>(std::get<_Indexes2>(__tuple2))...)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/ucrt64/include/c++/15.1.0/tuple:2887:9: note: there are 3 candidates
+BAI2.cpp:11:5: note: candidate 1: 'Student::Student(long long int, int)'
+   11 |     Student(long long _id, int pos)
+      |     ^~~~~~~
+BAI2.cpp:11:5: note: candidate expects 2 arguments, 0 provided
+BAI2.cpp:4:7: note: candidate 2: 'constexpr Student::Student(const Student&)'
+    4 | class Student {
+      |       ^~~~~~~
+BAI2.cpp:4:7: note: candidate expects 1 argument, 0 provided
+BAI2.cpp:4:7: note: candidate 3: 'constexpr Student::Student(Student&&)'
+BAI2.cpp:4:7: note: candidate expects 1 argument, 0 provided
+PS D:\12a7\11A7\BDHSG.tranvankiet\testDE.cpp\BAI_ONLINE\Đề\Đề Long An> g++ BAI2.cpp -o BAI2
+In file included from C:/msys64/ucrt64/include/c++/15.1.0/bits/memory_resource.h:49,
+                 from C:/msys64/ucrt64/include/c++/15.1.0/string:72,
+                 from C:/msys64/ucrt64/include/c++/15.1.0/bitset:54,
+                 from C:/msys64/ucrt64/include/c++/15.1.0/x86_64-w64-mingw32/bits/stdc++.h:54,
+                 from BAI2.cpp:1:
+C:/msys64/ucrt64/include/c++/15.1.0/tuple: In instantiation of 'std::pair<_T1, _T2>::pair(std::tuple<_Args1 ...>&, std::tuple<_Args2 ...>&, std::_Index_tuple<_Indexes1 ...>, std::_Index_tuple<_Indexes2 ...>) [with _Args1 = {long long int&&}; long long unsigned int ..._Indexes1 = {0}; _Args2 = {}; long long unsigned int ..._Indexes2 = {}; _T1 = const long long int; _T2 = Student]':
+C:/msys64/ucrt64/include/c++/15.1.0/tuple:2876:63:   required from 'std::pair<_T1, _T2>::pair(std::piecewise_construct_t, std::tuple<_Args1 ...>, std::tuple<_Args2 ...>) [with _Args1 = {long long int&&}; _Args2 = {}; _T1 = const long long int; _T2 = Student]'
+ 2876 |              typename _Build_index_tuple<sizeof...(_Args2)>::__type())
+      |                                                                      ^
+C:/msys64/ucrt64/include/c++/15.1.0/bits/new_allocator.h:191:4:   required from 'void std::__new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = std::pair<const long long int, Student>; _Args = {const std::piecewise_construct_t&, std::tuple<long long int&&>, std::tuple<>}; _Tp = std::__detail::_Hash_node<std::pair<const long long int, Student>, false>]'
+  191 |         { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/ucrt64/include/c++/15.1.0/bits/alloc_traits.h:674:17:   required from 'static void std::allocator_traits<std::allocator<_CharT> >::construct(allocator_type&, _Up*, _Args&& ...) [with _Up = std::pair<const long long int, Student>; _Args = {const std::piecewise_construct_t&, std::tuple<long long int&&>, std::tuple<>}; _Tp = std::__detail::_Hash_node<std::pair<const long long int, Student>, false>; allocator_type = std::allocator<std::__detail::_Hash_node<std::pair<const long long int, Student>, false> >]'
+  674 |           __a.construct(__p, std::forward<_Args>(__args)...);
+      |           ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/ucrt64/include/c++/15.1.0/bits/hashtable_policy.h:1556:36:   required from 'std::__detail::_Hashtable_alloc<_NodeAlloc>::__node_type* std::__detail::_Hashtable_alloc<_NodeAlloc>::_M_allocate_node(_Args&& ...) [with _Args = {const std::piecewise_construct_t&, std::tuple<long long int&&>, std::tuple<>}; _NodeAlloc = std::allocator<std::__detail::_Hash_node<std::pair<const long long int, Student>, false> >; __node_ptr = std::allocator<std::__detail::_Hash_node<std::pair<const long long int, Student>, false> >::value_type*]'
+ 1556 |             __node_alloc_traits::construct(__alloc, __n->_M_valptr(),
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1557 |                                            std::forward<_Args>(__args)...);
+      |                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/ucrt64/include/c++/15.1.0/bits/hashtable.h:305:35:   required from 'std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_Scoped_node::_Scoped_node(std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::__hashtable_alloc*, _Args&& ...) [with _Args = {const std::piecewise_construct_t&, std::tuple<long long int&&>, std::tuple<>}; _Key = long long int; _Value = std::pair<const long long int, Student>; _Alloc = std::allocator<std::pair<const long long int, Student> >; _ExtractKey = std::__detail::_Select1st; _Equal = std::equal_to<long long int>; _Hash = std::hash<long long int>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<false, false, true>; std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::__hashtable_alloc = std::_Hashtable<long long int, std::pair<const long long int, Student>, std::allocator<std::pair<const long long int, Student> >, std::__detail::_Select1st, std::equal_to<long long int>, std::hash<long long int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__hashtable_alloc]'        
+  305 |             _M_node(__h->_M_allocate_node(std::forward<_Args>(__args)...))
+      |                     ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/ucrt64/include/c++/15.1.0/bits/hashtable_policy.h:918:42:   required from 'std::__detail::_Map_base<_Key, std::pair<const _Key, _Val>, _Alloc, std::__detail::_Select1st, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::mapped_type& std::__detail::_Map_base<_Key, std::pair<const _Key, _Val>, _Alloc, std::__detail::_Select1st, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::operator[](key_type&&) [with _Key = long long int; _Val = Student; _Alloc = std::allocator<std::pair<const long long int, Student> >; _Equal = std::equal_to<long long int>; _Hash = std::hash<long long int>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<false, false, true>; mapped_type = Student; key_type = long long int]'
+  918 |       typename __hashtable::_Scoped_node __node {
+      |                                          ^~~~~~
+C:/msys64/ucrt64/include/c++/15.1.0/bits/unordered_map.h:1062:20:   required from 'std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::mapped_type& std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](key_type&&) [with _Key = long long int; _Tp = Student; _Hash = std::hash<long long int>; _Pred = std::equal_to<long long int>; _Alloc = std::allocator<std::pair<const long long int, Student> >; mapped_type = Student; key_type = long long int]'
+ 1062 |       { return _M_h[std::move(__k)]; }
+      |                ~~~~^
+BAI2.cpp:39:18:   required from here
+   39 |             mp[id].update(time);
+      |                  ^
+C:/msys64/ucrt64/include/c++/15.1.0/tuple:2887:9: error: no matching function for call to 'Student::Student()'
+ 2887 |         second(std::forward<_Args2>(std::get<_Indexes2>(__tuple2))...)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/ucrt64/include/c++/15.1.0/tuple:2887:9: note: there are 3 candidates
+BAI2.cpp:11:5: note: candidate 1: 'Student::Student(long long int, int)'
+   11 |     Student(long long _id, int pos)
+      |     ^~~~~~~
+BAI2.cpp:11:5: note: candidate expects 2 arguments, 0 provided
+BAI2.cpp:4:7: note: candidate 2: 'constexpr Student::Student(const Student&)'
+    4 | class Student {
+      |       ^~~~~~~
+BAI2.cpp:4:7: note: candidate expects 1 argument, 0 provided
+BAI2.cpp:4:7: note: candidate 3: 'constexpr Student::Student(Student&&)'
+BAI2.cpp:4:7: note: candidate expects 1 argument, 0 provided
+PS D:\12a7\11A7\BDHSG.tranvankiet\testDE.cpp\BAI_ONLINE\Đề\Đề Long An> 
