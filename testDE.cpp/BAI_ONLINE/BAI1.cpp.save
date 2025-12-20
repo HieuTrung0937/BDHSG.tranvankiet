@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define TASK "BAI1"
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    freopen(TASK".inp","r",stdin);
+    freopen(TASK".out","w",stdout);
+    int n_nguoi, max_thang_may; cin>> n_nguoi >> max_thang_may;
+    // cout<<n_nguoi<<" "<<max_thang_may;
+    vector<int> a(n_nguoi);
+    for(int i = 0; i < n_nguoi ; i++)
+        cin>>a[i];
+    sort(a.begin(), a.end(), greater<int>());
+    int ans;
+    for(int i = 0; i < n_nguoi ; i+= max_thang_may)
+        ans += 2*(a[i] - 1);
+    cout<<ans;
+    // for(int i : a)
+    //     cout<<i<<" ";
+    return 0;
+}
