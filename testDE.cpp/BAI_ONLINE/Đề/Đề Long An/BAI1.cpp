@@ -22,7 +22,7 @@ string NhanString(string &s, int n)
     }
     return res;
 }
-bool is_prime(long long n) {
+bool is_prime(unsigned long n) {
     // if (n <= 1) return false;
     // if (n <= 3) return true;
     if (n % 2 == 0 || n % 3 == 0) return false;
@@ -39,9 +39,9 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr); cout.tie(nullptr);
     freopen(TASK".inp", "r", stdin);
-    // freopen(TASK".out", "w", stdout);
-    clock_t timer1, timer2;
-    timer1 = clock();
+    freopen(TASK".out", "w", stdout);
+    // clock_t timer1, timer2;
+    // timer1 = clock();
     int k; cin>>k;
     int n = 2*k+1;
     vector<ll> kq;
@@ -53,7 +53,7 @@ int main(){
         for(int j = 0; j < 10; j++)
         {
             if(j == i) continue;
-            ll So_Dang_xet;
+            long long So_Dang_xet;
             string so_xet = d + to_string(j) + d;
             So_Dang_xet = stoll(so_xet);
             // cout<<So_Dang_xet<<" "<<(is_prime(So_Dang_xet) ? "YES" : "NO")<<"\n";
@@ -70,11 +70,12 @@ int main(){
         cout << sep << x;
         sep = " ";
     }
+    cout<<"\n";
     // if(ham_xet("3333333331333333333")) cout<<"YES";
     // else cout<<" No";
     // cout<<ham_xet("3333333331333333333");
-    timer2 = clock();
-    cout<<(double)(timer2 - timer1)/CLOCKS_PER_SEC;
+    // timer2 = clock();
+    // cout<<(double)(timer2 - timer1)/CLOCKS_PER_SEC;
     // return 0;
     // cout<<n;
 }
