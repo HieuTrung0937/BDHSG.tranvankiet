@@ -1,6 +1,6 @@
 import time
 timer1 = time.time()
-for i in range(10000000):
+for i in range(10000):
     print(i)
 timer2 = time.time()
 
