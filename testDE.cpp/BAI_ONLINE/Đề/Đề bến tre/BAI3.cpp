@@ -29,7 +29,7 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(NULL); cout.tie(NULL);
     freopen(TASK".inp", "r",stdin);
-    // freopen(TASK".out", "w",stdout);
+    freopen(TASK".out", "w",stdout);
     int N, so_dong; cin>>N>>so_dong;
     vector<vector<int>> ds_so_sanh(so_dong, vector<int>(2));
     for(int i = 1 ; i < N + 1; i++) ds_so_tang_dan.push_back(i);
@@ -40,6 +40,7 @@ int main(){
             cin>>ds_so_sanh[i][j];
         }
     }
+
     // for(auto i : ds_so_tang_dan)
     // {
     //     cout<<i<<" ";
@@ -51,19 +52,18 @@ int main(){
     // }
     // vector<int> ds_test = {1,2,5,4,6,3};
     // cout<<sap_xep_tien_tinh(ds_test,6);
-    for(vector<int> a : ds_so_sanh)
+    for (const vector<int>& a : ds_so_sanh)
     {
-        int x;
-        int y;
-        x = a[0];
-        y = a[1];
-        for(int i = 0; i < so_dong; i++)
-        {
-            rotate(ds_so_tang_dan.begin() + x, ds_so_tang_dan.begin() + y, ds_so_tang_dan.begin() + N);
-        }
-    }
-    // swap(ds_so_tang_dan[1], ds_so_tang_dan[6]);
-    for(int n : ds_so_tang_dan) cout << n << " ";
+        int x = a[0];
+        int y = a[1];
 
+        int tmp = ds_so_tang_dan[x - 1];                 
+        ds_so_tang_dan.erase(ds_so_tang_dan.begin() + x - 1); 
+        ds_so_tang_dan.insert(ds_so_tang_dan.begin() + y - 1, tmp); 
+
+    }
+
+    //for(int n : ds_so_tang_dan) cout << n << " ";
+    cout<<sap_xep_tien_tinh(ds_so_tang_dan,N);
     return 0;
 }
