@@ -8,13 +8,14 @@ int sap_xep_tien_tinh(vector<int> &ds,int N)
     int count = 0;
     for (int i=0; i<N-1; i++) {
         int min_N = i;
-        int min_N_old = min_N;
+        bool swap_N = false;
         for (int j=i+1; j<N; j++) {
             if (ds[min_N] > ds[j]) {
                 min_N = j;
+                swap_N = true;
             }
         }
-        if(min_N != min_N_old){
+        if(swap_N){
             swap(ds[i], ds[min_N]);
             count++;
         }
