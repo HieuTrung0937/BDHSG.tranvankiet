@@ -17,7 +17,7 @@ int main(){
     }else
     {
         a = n%mod;
-        b = (n + 1)/2;
+        b = ((n + 1)/2)%mod;
     }
     ll ketqua = (a*b)%mod;
     cout<<(ketqua * ketqua)%mod;
