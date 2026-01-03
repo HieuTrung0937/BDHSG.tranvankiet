@@ -9,9 +9,7 @@ int main(){
     freopen(TASK".out", "w", stdout);
     int T;
     cin >> T;
-
     int count_valid = 0;
-
     while (T--) {
         string s;
         cin >> s;
