@@ -17,28 +17,31 @@ int main(){
         int i = 0;
         int turn = 1;
         bool ok = true;
+        char da_qua = 0;
         while (i < n) {
             int j = i;
-            while (j < n && s[j] == s[i]) {
-                j++;
+            while (j < n && s[j] == s[i]) j++;
+            int len = j - i;
+            if (turn % 2 == 1 && len != 1) {
+                ok = false;
+                break;
             }
-            int len = j - i;  
-            if (turn % 2 == 1) {       
-                if (len != 1) {
-                    ok = false;
-                    break;
-                }
-            } else {                   
-                if (len != 2) {
-                    ok = false;
-                    break;
-                }
+            if (turn % 2 == 0 && len != 2) {
+                ok = false;
+                break;
             }
+            if (da_qua == s[i]) {
+                ok = false;
+                break;
+            }
+            da_qua = s[i];
             i = j;
             turn++;
         }
+
         if (ok) count_valid++;
     }
+
     cout << count_valid;
     return 0;
 }
