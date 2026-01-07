@@ -3,10 +3,10 @@ using namespace std;
 #define TASK "TIHON"
 #define ll long long
 
-bool tong_uoc(ll n)
+ll tong_uoc(ll n)
 {
     ll tong = 1;
-    for(int i = sqrt(n); i >= 2 ; i--)
+    for(int i = 2; i < sqrt(n); i++)
     {
         if(n % i ==0)
         {
@@ -14,32 +14,25 @@ bool tong_uoc(ll n)
             {
                 tong += n/i;
             }
-            cout<<i<<" ";
             tong += i;
-
         }
-        cout<<tong<<';';
-        if(tong > n) return true;
     }
-    return false;
+    return tong;
 }
 
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(NULL); cout.tie(NULL);
     freopen(TASK".inp", "r", stdin);
-    //freopen(TASK".out", "w", stdout);
+    freopen(TASK".out", "w", stdout);
     int n; cin>>n;
     vector<ll> cac_so(n);
     for(int i = 0; i < n; i++) cin>>cac_so[i];
     int count = 0;
-    // for(ll x: cac_so)
-    // {
-    //     cout<<tong_uoc(x);
-    //     if(tong_uoc(x)) count++;
-    // }
-    // cout<<tong_uoc(12);
-    cout<<tong_uoc(16);
+    for(ll x: cac_so)
+    {
+        if(tong_uoc(x) > x) count++;
+    }
     cout<<count;
     return 0;
 }
