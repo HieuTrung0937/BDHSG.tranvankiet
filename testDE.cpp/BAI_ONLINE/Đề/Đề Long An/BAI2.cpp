@@ -55,6 +55,7 @@ public:
                 bestFirstPos = st.getFirstPos();
             }
         }
+
         return {bestId, bestTime};
     }
 };
@@ -62,25 +63,6 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr); cout.tie(nullptr);
     freopen(TASK".inp", "r", stdin);
-    freopen(TASK".out", "w", stdout);
-    // clock_t timer1, timer2;
-    // timer1 = clock();
-    int N; cin>> N;//cout<<N;
-    vector<int> ID(N + 1);
-    for(int i = 1; i<N; i++) cin>>ID[i];
-    TimelineSystem ThoiGian;
-    for(int i  = 1; i < N; i++)
-    {
-        ThoiGian.addScan(ID[i],i);
-    }
-    pair<int, int> ketqua = ThoiGian.getBestStudent();
-    cout<<ketqua.first<<"\n"<<ketqua.second;
-    // timer2 = clock();
-    // cout<<(double)(timer2 - timer1);
-    // cout<<"\n";
-    // for(int i : ID)
-    // {
-    //     cout<<i<<" ";
-    // }
-    // return 0;
+    // freopen(TASK".out", "w", stdout);
+    return 0;
 }
