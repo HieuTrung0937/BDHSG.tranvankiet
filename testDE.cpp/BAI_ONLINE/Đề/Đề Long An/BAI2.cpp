@@ -55,7 +55,6 @@ public:
                 bestFirstPos = st.getFirstPos();
             }
         }
-
         return {bestId, bestTime};
     }
 };
