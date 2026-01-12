@@ -16,14 +16,14 @@ int main(){
             cin>>ma_tran[i][j];
         }
     }
-    // for(auto a : ma_tran)
-    // {
-    //     for(int i : a)
-    //     {
-    //         cout<<i<<" ";
-    //     }
-    //     cout<<"\n";
-    // }
+    for(auto a : ma_tran)
+    {
+         for(int i : a)
+         {
+             cout<<i<<" ";
+         }
+         cout<<"\n";
+    }
     int sum = 0;
     for(int i = 0 ; i < n; i++)
     {
