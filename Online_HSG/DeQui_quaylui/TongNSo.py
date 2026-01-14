@@ -5,6 +5,6 @@ def tong(n):
     if (n == 1): return 1
     return tong(n-1) + n
 
-n = 10
+n = 16
 
-print(int(tong(n)))
+print(int(tong(n)) + int(tong(n)))
