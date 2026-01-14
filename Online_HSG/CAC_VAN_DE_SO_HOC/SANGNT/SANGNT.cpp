@@ -15,8 +15,8 @@ int main(){
 	cin.tie(0);
 	cout.tie(0);
 	
-	freopen("SANGNT.INP","r",stdin);
-	freopen("SANGNT.OUT","w",stdout);
+	// freopen("SANGNT.INP","r",stdin);
+	// freopen("SANGNT.OUT","w",stdout);
 	
 	int n;
 	
