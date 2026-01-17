@@ -5,33 +5,43 @@ using namespace std;
 struct DOANXE {
     int tl;
     double v;
-    double thgian;
-    DOANXE(int _tl = 0, double _v = 0, double kc = 0) {
+    DOANXE(int _tl = 0, double _v = 0) {
         tl = _tl;
         v = _v;
-        thgian = kc / v;
     }
 };
+
 int main(){
     ios::sync_with_stdio(false);
-    cin.tie(NULL); cout.tie(NULL);
+    cin.tie(nullptr);
+
     freopen(TASK".INP", "r", stdin);
     freopen(TASK".OUT", "w", stdout);
-    int n, tt; 
-    double kc;cin>>n>>tt>>kc;
+
+    int n, tt;
+    double kc;
+    cin >> n >> tt >> kc;
+
     vector<DOANXE> xe(n + 1);
-    for(int i = 0; i < n; i++)
-    {
-        int k; 
-        double v; cin>>k>>v;
-        xe[i] = DOANXE(k,v,kc);
+    for(int i = 1; i <= n; i++){
+        cin >> xe[i].tl >> xe[i].v;
     }
-    // cout<<xe[1].thgian;
-    vector<int> dp(n + 1);
-    int min_t = 1e10;
-    for(int i = 0; i < n; i++)
-    {
-        for(int j = i; j <)
+
+    const double INF = 1e18;
+    vector<double> dp(n + 1, INF);
+    dp[0] = 0;
+
+    for(int i = 1; i <= n; i++){
+        int ttai = 0;
+        double xe_cham = 1e18;
+        for(int j = i; j >= 1; j--){
+            ttai += xe[j].tl;
+            if(ttai > tt) break;
+            xe_cham = min(xe_cham, xe[j].v);
+            dp[i] = min(dp[i], dp[j-1] + kc / xe_cham);
+        }
     }
+
+    cout << fixed << setprecision(2) << dp[n];
     return 0;
 }
