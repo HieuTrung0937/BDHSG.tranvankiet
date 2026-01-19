@@ -53,10 +53,7 @@ int main() {
 
             divisors_count *= (count + 1);
         }
-        
-
-        cout << divisors_count << " ";
-        
+        cout << divisors_count << " "
         string first_char = "";
         for (int p : prime_factors) {
             cout << first_char << p;

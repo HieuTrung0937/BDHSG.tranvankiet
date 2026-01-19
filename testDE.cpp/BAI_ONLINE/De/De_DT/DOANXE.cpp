@@ -17,11 +17,9 @@ int main(){
 
     freopen(TASK".INP", "r", stdin);
     freopen(TASK".OUT", "w", stdout);
-
     int n, tt;
     double kc;
     cin >> n >> tt >> kc;
-
     vector<DOANXE> xe(n + 1);
     for(int i = 1; i <= n; i++){
         cin >> xe[i].tl >> xe[i].v;
@@ -38,10 +36,11 @@ int main(){
             ttai += xe[j].tl;
             if(ttai > tt) break;
             xe_cham = min(xe_cham, xe[j].v);
-            dp[i] = min(dp[i], dp[j-1] + kc / xe_cham);
+            dp[i] = min(dp[i], dp[j-1] + kc / xe_cham); 
+            
         }
     }
-
+    
     cout << fixed << setprecision(2) << dp[n];
     return 0;
 }
