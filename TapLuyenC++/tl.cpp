@@ -19,6 +19,7 @@ int main(){
         // cout<<n/=mg[i];
     }
     // cout<<6/20;
-    cout<<cnt;
+    // cout<<cnt;
+    
     return 0;
 }

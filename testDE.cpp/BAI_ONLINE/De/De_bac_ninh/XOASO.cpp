@@ -26,7 +26,6 @@ int main() {
         kq = min(kq, M + m);
         // cout<<kq<<" ";
     }
-
     cout<<kq;
     return 0;
 }
