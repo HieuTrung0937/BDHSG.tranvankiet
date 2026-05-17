@@ -1,1 +1,24 @@
-5
+SDMC25A12272028261
+trunghieu@trunghieu-Aspire-A315-44P:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 40:c2:ba:f2:fe:95 brd ff:ff:ff:ff:ff:ff
+3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether b8:1e:a4:f6:14:39 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.193/24 brd 192.168.1.255 scope global dynamic noprefixroute wlp3s0
+       valid_lft 68sec preferred_lft 68sec
+    inet6 fd9c::f89c:c1ad:79c7:7b89/64 scope global temporary dynamic 
+       valid_lft 43199sec preferred_lft 43199sec
+    inet6 fd9c::98c7:b4b2:fa4e:666/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 43199sec preferred_lft 43199sec
+    inet6 fe80::5dc1:d3e5:50f8:8c89/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether be:d0:5b:b8:24:3e brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
