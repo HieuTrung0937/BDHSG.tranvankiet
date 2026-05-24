@@ -18,7 +18,7 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    // freopen(INP,"r",stdin);
+    // freopen(INP,"r",stdin); 
     // freopen(OUT,"w",stdout);
     cin>>n>>q;
     vector<vector<int>> matrix(n + 1, vector<int> (n + 1));
