@@ -22,30 +22,52 @@ void inp(int m)
 }
 void tarjan(int u, int p)
 {
+    // Danh so thu tu DFS cho dinh u
+    // Ban dau low = num vi chua biet co duong quay nguoc nao
     num[u] = low[u] = ++timer;
+
+    // Dem so con cua goc DFS
     int c = 0;
+
+    // Duyet tat ca dinh ke cua u
     for(int v : adj[u])
     {
+        // Bo qua canh quay lai cha trong cay DFS
         if(v == p) continue;
+
+        // Neu v chua duoc tham
         if(num[v] == 0)
         {
             c++;
+
+            // DFS xuong cay con
             tarjan(v, u);
+
+            // Cap nhat low cua u dua vao cay con
             low[u] = min(low[u], low[v]);
-            if(p !=-1 && low[v] >= num[u])
+
+            // Neu u khong phai goc
+            // Va cay con cua v khong the quay len to tien cua u
+            // Thi xoa u se tach cay con do ra khoi do thi
+            if(p != -1 && low[v] >= num[u])
             {
                 vis[u] = true;
             }
-        }else
+        }
+        else
         {
+            // Gap canh nguoc
+            // Cap nhat low cua u bang dinh co num nho hon
             low[u] = min(low[u], num[v]);
         }
     }
-    if(p == -1 && c >=2)
+
+    // Truong hop dac biet cua goc DFS
+    // Goc co tu 2 cay con tro len moi la dinh khop
+    if(p == -1 && c >= 2)
     {
         vis[u] = true;
     }
-
 }
 int main(){
     ios::sync_with_stdio(false);
