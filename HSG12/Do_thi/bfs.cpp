@@ -8,9 +8,6 @@ using namespace std;
 const int N = 1005;
 vector<int> adj[N];
 bool vis[N];
-int num[N], low[N];
-int timer = 0;
-int cau = 0;
 void inp(int m)
 {
     REP(i, m)
@@ -21,28 +18,28 @@ void inp(int m)
         adj[v].push_back(u);
     }
 }
-void tarjan(int u, int p)
+
+void bfs(int n)
 {
-    num[u] = low[u] = ++timer;
-    int c = 0;
-    for(int v : adj[u])
+    queue<int> q;
+    q.push(n);
+    vis[n] = true;
+    while(!q.empty())
     {
-        if(v == p) continue;
-        if(num[v] == 0)
+        int v = q.front();
+        cout<<v<<" ";
+        q.pop();
+        for(int x : adj[v])
         {
-            c++;
-            tarjan(v, u);
-            low[u] = min(low[u], low[v]);
-            if(low[v] > num[u])
+            if(!vis[x])
             {
-                cau++;
+                q.push(x);
+                vis[x] = true;
             }
-        }else
-        {
-            low[u] = min(low[u], num[v]);
         }
     }
 }
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(NULL);
@@ -52,20 +49,7 @@ int main(){
     inp(m);
     FOR(i, n, 1)
     {
-        if(num[i] == 0)
-        {
-            tarjan(i, - 1);
-        }
+        if(!vis[i]) bfs(i);
     }
-    // int ans = 0;
-    // FOR(i, n, 1)
-    // {
-    //     if(vis[i])
-    //     {
-    //         ans++;
-    //     }
-    // }
-    // cout<<ans;
-    cout<<cau;
     return 0;
 }

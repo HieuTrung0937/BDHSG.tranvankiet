@@ -21,14 +21,13 @@ void inp(int m)
     }
 }
 void tarjan(int u, int p)
+
 {
     // Danh so thu tu DFS cho dinh u
     // Ban dau low = num vi chua biet co duong quay nguoc nao
     num[u] = low[u] = ++timer;
-
     // Dem so con cua goc DFS
     int c = 0;
-
     // Duyet tat ca dinh ke cua u
     for(int v : adj[u])
     {

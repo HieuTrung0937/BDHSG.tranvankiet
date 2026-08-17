@@ -1,28 +1,31 @@
 #include <iostream>
-#include <map>
-#include <list> // Thêm thư viện list
+#include <string>
+#include <list>
+#include <algorithm>
+#include <vector>
 using namespace std;
-
-int main() {
-    // Tạo map với Key là chuỗi (Ví dụ: Tên ca sĩ) 
-    // và Value là một danh sách (list) các bài hát
-    map<string, list<string>> playlist;
-
-    // Thêm bài hát vào danh sách của ca sĩ Sơn Tùng
-    playlist["Son Tung"].push_back("Chay Ngay Di");
-    playlist["Son Tung"].push_back("Lac Troi");
-    playlist["Son Tung"].push_front("Chung Ta Cua Hien Tai"); // Thêm vào đầu list
-
-    // Thêm bài hát cho ca sĩ khác
-    playlist["Den Vau"].push_back("Tron Tim");
-
-    // Duyệt map và in ra danh sách bài hát
-    for (auto caSi : playlist) {
-        cout << "Ca si: " << caSi.first << "\nDanh sach bai hat:\n";
-        for (string baiHat : caSi.second) {
-            cout << " - " << baiHat << endl;
+//Bài 5: Giả sử mảng A đã được sắp xếp theo thứ tự tăng dần. Viết hàm để kiểm tra xem phần tử X có
+//trong mảng A hay không?
+int a[7] = {1 ,3 ,4, 7 ,12 ,16 ,18};
+int n = 7;
+int main() 
+{
+    int x = 4;
+    int l = 0;
+    int r = n - 1;
+    while(l <= r)
+    {
+        int m = (l + r)/2 ;
+        if(a[m] == x)
+        {
+            cout<<"Co"; return 0;
+        }else if (x < a[m])
+        {
+            r = m - 1;
+        }else
+        {
+            l = m + 1;
         }
-        cout << "--------------------" << endl;
     }
-    return 0;
+    cout<<"Khong co";
 }
