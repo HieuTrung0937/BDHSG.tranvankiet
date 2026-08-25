@@ -32,9 +32,7 @@ public:
     //diem manh: Do phuc tap O(logn)
     //diem yeu: Kho diem dc trong list co bao nhieu so giong, phai can mang sap xep
     bool BinarySeacrh(const vector<int> &a, int n, int x)
-    {
-
-        
+    {  
         int l, r;
         l = 0;
         r = n;

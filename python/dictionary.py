@@ -126,4 +126,4 @@ def bai_13():
             loai = "yeu"
         print(f"{ten} : TB = {d_tb:.1f} => {loai}")
 
-print("huihdaa"")
+print("huihdaa")

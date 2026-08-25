@@ -16,23 +16,42 @@
 # for i in a:
 #     print(i, end = " ")
 # # print(max(a))
-a = [1 ,3 ,4, 7 ,12 ,16 ,18]
-n = len(a)
-x = 777
 
-l = 0
-r = n - 1
-CoTrongMang = False
-while l <= r:
-    m = int((l + r)/2)
-    if a[m] == x:
-        CoTrongMang = True
-        break
-    elif x < a[m]:
-        r = m - 1
-    else:
-        l = m + 1
-if(CoTrongMang): 
-    print('Co!')
-else:
-    print("Khong co trong mang!")
+
+
+
+
+
+
+
+
+
+# def gioithieu():
+#     print("Hello")
+
+# def gioithieu111():
+#     return 0
+
+# def [ten ham](<kieu du lieu>, <kieu du lieu>,....):
+#     <khoi lenh thuc thi>
+#     return <gia tri tra ve>
+
+def kiemtra(a, x):
+    n = len(a)
+    l = 0
+    r = n - 1
+    while l <= r:
+        m = int((l + r)/2)
+        if a[m] == x:
+            return True
+        elif x < a[m]:
+            r = m - 1
+        else:
+            l = m + 1
+    return False
+a = [1 ,3 ,4, 7 ,12 ,16 ,18]
+# n = len(a)
+x = 8
+
+print(kiemtra(a,x))
+
