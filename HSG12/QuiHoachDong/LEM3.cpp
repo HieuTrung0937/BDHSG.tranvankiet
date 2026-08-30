@@ -46,7 +46,7 @@ int main(){
         ans = min(ans, dp[full_mask][u]);
     }
 
-    cout << ans << "\n";
+    cout << ans;
 
     return 0;
 }
