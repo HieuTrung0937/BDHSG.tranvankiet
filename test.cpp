@@ -9,8 +9,9 @@ int so_sanh(int a, int b)
 }
 
 int main() {
-    int a, b, c;
-    cin>>a>>b>>c;
-    cout<<so_sanh(a , so_sanh(b, c));
+    for(int i = 0; i< 1000; i++)
+    {
+        cout<<")";
+    }
     return 0;       
 }
